@@ -4,21 +4,21 @@ export type FootballTeam = {
 }
 
 export type Team = {
-  code: string;
-  country: string;
-  founded: number;
+  code?: string;
+  country?: string;
+  founded?: number;
   id: number;
   logo: string;
   name: string;
-  national: boolean;
+  national?: boolean;
 }
 
-type Venue = {
-  address: string;
-  capacity: number;
+export type Venue = {
+  address?: string;
+  capacity?: number;
   city: string;
   id: number;
-  image: string;
+  image?: string;
   name: string;
-  surface: string;
+  surface?: string;
 }
