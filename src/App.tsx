@@ -1,10 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import { leagueService } from "./services/LeagueService";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
+  useEffect(() => {
+    leagueService
+      .getLeague('135')
+      .then((response) => {
+        console.log("response: ", response);
+      })
+      .catch((error) => {
+        console.log("error: ", error);
+      });
+  }, []);
   return (
     <div className="App">
       <div>
@@ -28,7 +39,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
