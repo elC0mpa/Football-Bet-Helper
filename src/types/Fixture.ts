@@ -27,7 +27,7 @@ export type Fixture = {
   referee: string | null;
   status: {
     long: string;
-    short: string;
+    short: FixtureStatus;
     elapsed: number | null;
   }
   timestamp: number;
@@ -43,3 +43,5 @@ type HomeAway = {
 type H2HTeam = Team & {
   winner: boolean | null
 }
+
+export type FixtureStatus = "TBD" | "NS" | "1H" | "HT" | "2H" | "ET" | "BT" | "P" | "SUSP" | "INT" | "FT" | "AET" | "PEN" | "PST" | "CANC" | "ABD" | "AWD" | "WO" | "LIVE";
