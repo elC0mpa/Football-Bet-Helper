@@ -21,14 +21,14 @@ export type Fixture = {
   date: string;
   id: number;
   periods: {
-    first: number;
-    second: number;
+    first: number | null;
+    second: number | null;
   }
-  referee: string;
+  referee: string | null;
   status: {
     long: string;
     short: string;
-    elapsed: number;
+    elapsed: number | null;
   }
   timestamp: number;
   timezone: string;
