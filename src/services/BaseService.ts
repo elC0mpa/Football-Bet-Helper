@@ -38,6 +38,17 @@ class BaseService {
       }
     })
   }
+  
+  protected async getWithFilter(filter: string) {
+    return new Promise(async(resolve, reject) => {
+      try {
+        const {data} = await this.client.get(`${this.moduleURL}?${filter}`)
+        resolve(data.response)
+      } catch (error) {
+        reject(error)
+      }
+    })
+  }
 }
 
 export { BaseService };

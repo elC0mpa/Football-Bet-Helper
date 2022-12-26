@@ -3,7 +3,7 @@ export type FootballTeam = {
   venue: Venue;
 }
 
-type Team = {
+export type Team = {
   code: string;
   country: string;
   founded: number;
