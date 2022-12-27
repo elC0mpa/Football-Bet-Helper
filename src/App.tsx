@@ -1,5 +1,6 @@
 import {Provider} from "react-redux";
 import AppLayout from "./components/layout";
+import {MainContentContainer} from "./components/layout/styled";
 import {store} from "./store";
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
   return (
     <Provider store={store}>
       <AppLayout>
-        Este es el content que definí
+        <MainContentContainer>
+          Esta es la prueba
+        </MainContentContainer>
       </AppLayout>
     </Provider>
   );

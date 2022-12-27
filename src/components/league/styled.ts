@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {colors} from "../../styles/colors";
 
 export const LeagueItemContainer = styled.div`
 	display: flex;
@@ -9,8 +10,8 @@ export const LeagueItemContainer = styled.div`
 	min-height: 70px;
 	cursor: pointer;
 	border-radius: 16px;
-	background: #001529;
+	background: ${colors.primary};
 	&.is-selected {
-		background: #000047;
+		background: ${colors.primaryHover};
 	}
 `
