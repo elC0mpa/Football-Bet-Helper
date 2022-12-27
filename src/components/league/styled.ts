@@ -7,4 +7,8 @@ export const LeagueItemContainer = styled.div`
 	align-items: center;
 	color: white;
 	min-height: 70px;
+	cursor: pointer;
+	&.is-selected {
+		color: grey;
+	}
 `
