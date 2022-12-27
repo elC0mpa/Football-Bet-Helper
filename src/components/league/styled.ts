@@ -8,7 +8,9 @@ export const LeagueItemContainer = styled.div`
 	color: white;
 	min-height: 70px;
 	cursor: pointer;
+	border-radius: 16px;
+	background: #001529;
 	&.is-selected {
-		color: grey;
+		background: #000047;
 	}
 `

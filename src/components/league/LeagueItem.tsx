@@ -1,3 +1,4 @@
+import {memo} from "react";
 import {useAppDispatch} from "../../hooks/store";
 import {changeSelectedLeague} from "../../store/leaguesSlice";
 import {LeagueItemContainer} from "./styled";
@@ -19,4 +20,4 @@ const LeagueItem = ({name, id, selected}: Props) => {
 		</LeagueItemContainer>
 }
 
-export default LeagueItem;
+export default memo(LeagueItem);

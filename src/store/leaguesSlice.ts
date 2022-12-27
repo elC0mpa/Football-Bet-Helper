@@ -19,6 +19,18 @@ const initialState: LeaguesState = {
     {
       id: 39,
       name: 'Premier League'
+    },
+    {
+      id: 140,
+      name: 'La Liga'
+    },
+    {
+      id: 2,
+      name: 'Champions League'
+    },
+    {
+      id: 3,
+      name: 'Europa League'
     }
   ],
   selectedLeague: 135
