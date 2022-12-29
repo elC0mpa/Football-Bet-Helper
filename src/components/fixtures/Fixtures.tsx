@@ -4,6 +4,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks/store";
 import {fetchFixtures} from "../../store/fixturesSlice";
 import { Head2Head } from "./../../types/Fixture";
 import FixtureItem from "./FixtureItem";
+import HeadToHeadModal from "./HeadToHeadModal";
 import {FixturesContainer} from "./styled";
 
 const Fixtures = () => {
@@ -23,6 +24,7 @@ const Fixtures = () => {
 			return <FixtureItem {...{fixture}} key={fixture.fixture.id} />
 			})}
 		</FixturesContainer>
+		<HeadToHeadModal />
 		</Spin>
 	)
 }
