@@ -24,7 +24,7 @@ const FixtureItem = ({fixture}: Props) => {
 			</FixtureActionsContainer>
 			<FixtureTeamsContainer>
 				<TeamVisualizer name={teams.home.name} id={teams.home.id} />
-				<VersusStyled>VS</VersusStyled>
+				{event.status.short === "NS" && <VersusStyled>VS</VersusStyled>}
 				<TeamVisualizer name={teams.away.name} id={teams.away.id} type="away" />
 			</FixtureTeamsContainer>
 			<StyledDateSpan>{new Date(event.date).toLocaleString(undefined, {

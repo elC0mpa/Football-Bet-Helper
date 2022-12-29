@@ -2,12 +2,12 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import {fixturesService} from "../services/FixtureService";
 import {Head2Head} from "../types/Fixture";
 
-interface LeaguesState {
+interface FixturesState {
   fixtures: Head2Head[];
   loading: boolean;
 }
 
-const initialState: LeaguesState = {
+const initialState: FixturesState = {
   fixtures: [],
   loading: false
 };
