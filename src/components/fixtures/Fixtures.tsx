@@ -4,7 +4,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks/store";
 import {fetchFixtures} from "../../store/fixturesSlice";
 import { Head2Head } from "./../../types/Fixture";
 import FixtureItem from "./FixtureItem";
-import HeadToHeadModal from "./HeadToHeadModal";
+import HeadToHeadModal from "./../predictions/HeadToHeadModal";
 import {FixturesContainer} from "./styled";
 
 const Fixtures = () => {
