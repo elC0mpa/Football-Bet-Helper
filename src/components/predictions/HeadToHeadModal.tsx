@@ -2,7 +2,7 @@ import {Spin, Tabs} from "antd";
 import Modal from "antd/es/modal/Modal"
 import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks/store";
-import {fecthHeadToHead, setHeadToHeadFixture} from "../../store/fixturesSlice";
+import {fecthPredictions, setHeadToHeadFixture} from "../../store/fixturesSlice";
 import {Head2Head} from "../../types/Fixture";
 import HeadToHeadTab from "./HeadToHead";
 
@@ -25,7 +25,7 @@ const HeadToHeadModal = () => {
     ]
 	
 	useEffect(() => {
-		headToHeadFixture && dispatch(fecthHeadToHead(headToHeadFixture))
+		headToHeadFixture && dispatch(fecthPredictions(headToHeadFixture))
 	}, [headToHeadFixture])
 	return (
 		<Modal open={isOpen} centered closable={false} cancelButtonProps={{style: {display: 'none'}}} onOk={() => dispatch(setHeadToHeadFixture(null))} destroyOnClose bodyStyle={{overflowY: 'auto', maxHeight: '90vh'}} width={600}>
