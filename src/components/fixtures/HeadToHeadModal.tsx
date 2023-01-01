@@ -23,7 +23,7 @@ const HeadToHeadModal = () => {
 			<Spin spinning={isLoading}>
 				<FixturesContainer>
 					{headToHeadData.map((fixture: Head2Head) => {
-					return <FixtureItem {...{fixture}} showActions={false} />
+					return <FixtureItem {...{fixture}} showActions={false} key={fixture.fixture.id} />
 					})}
 				</FixturesContainer>
 			</Spin>

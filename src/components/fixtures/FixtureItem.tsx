@@ -6,7 +6,7 @@ import {setHeadToHeadFixture} from "../../store/fixturesSlice"
 import {Head2Head} from "../../types/Fixture"
 import TeamVersus from "../general/TeamVersus"
 import TeamVisualizer from "../general/TeamVisualizer"
-import {FixtureActionsContainer, FixtureItemContainer, FixtureTeamsContainer, StyledDateSpan, VersusStyled} from "./styled"
+import {FixtureActionsContainer, FixtureItemContainer, FixtureTeamsContainer, StyledDateSpan} from "./styled"
 
 type Props = {
 	fixture: Head2Head,
@@ -21,9 +21,9 @@ const FixtureItem = ({fixture, showActions = true}: Props) => {
 		day: "2-digit",
 		month: "2-digit",
 		year: "2-digit",
-		second: "2-digit",
-		minute: "2-digit",
-		hour: "2-digit"
+		second: showActions ? "2-digit" : undefined,
+		minute: showActions ? "2-digit" : undefined,
+		hour: showActions ? "2-digit" : undefined,
 	}
 	return (
 		<FixtureItemContainer>
@@ -36,9 +36,9 @@ const FixtureItem = ({fixture, showActions = true}: Props) => {
 				</Tooltip>
 				</FixtureActionsContainer>)}
 			<FixtureTeamsContainer>
-				<TeamVisualizer name={teams.home.name} id={teams.home.id} />
+				<TeamVisualizer name={teams.home.name} id={teams.home.id} isHighlighted={teams.home.winner} />
 				<TeamVersus {...{fixture}}/>
-				<TeamVisualizer name={teams.away.name} id={teams.away.id} type="away" />
+				<TeamVisualizer name={teams.away.name} id={teams.away.id} type="away" isHighlighted={teams.away.winner} />
 			</FixtureTeamsContainer>
 			<StyledDateSpan>{new Date(event.date).toLocaleString(undefined, localeOptions)}</StyledDateSpan>
 		</FixtureItemContainer>
