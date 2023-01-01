@@ -6,11 +6,12 @@ export type Prediction = {
   comparison: Comparison;
   h2h: Head2Head[];
   league: League;
-  teams: Teams
+  teams: Teams;
+  predictions: PredictionObj;
 }
 
 
-type Comparison = {
+export type Comparison = {
   att: HomeAway;
   def: HomeAway;
   form: HomeAway;
@@ -20,12 +21,29 @@ type Comparison = {
   total: HomeAway;
 }
 
-type HomeAway = {
+export type HomeAway = {
   home: string;
   away: string;
+}
+
+type HomeAwayDraw = HomeAway & {
+  draw: string;
 }
 
 type Teams = {
   away: Team;
   home: Team;
+}
+
+type PredictionObj = {
+  advice: string;
+  goals: HomeAway;
+  percent: HomeAwayDraw;
+  under_over: string | null;
+  win_or_draw: boolean;
+  winner: {
+    comment: string;
+    id: number;
+    name: string;
+  }
 }

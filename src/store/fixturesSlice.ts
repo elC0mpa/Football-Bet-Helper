@@ -2,15 +2,16 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import {fixturesService} from "../services/FixtureService";
 import {predictionsService} from "../services/PredictionsService";
 import {Head2Head} from "../types/Fixture";
-import {Prediction} from "../types/Prediction";
+import {Comparison, Prediction} from "../types/Prediction";
 
 interface FixturesState {
   fixtures: Head2Head[];
   loading: boolean;
   isHeadToHeadModalOpen: boolean;
   selectedFixture: Head2Head | null;
-  headToHead: Head2Head[];
   loadingHeadToHeadData: boolean;
+  headToHead: Head2Head[];
+  comparison?: Comparison;
 }
 
 const initialState: FixturesState = {
@@ -27,7 +28,6 @@ export const fetchFixtures = createAsyncThunk('fixtures/fetchFixtures', (leagueI
 })
 
 export const fecthPredictions = createAsyncThunk('fixtures/fecthPredictions', (fixture: Head2Head) => {
-  // return head2HeadService.getHeadToHeadData([fixture.teams.home.id.toString(), fixture.teams.away.id.toString()], 10)
   return predictionsService.getPredictionsForFixture(fixture.fixture.id)
 })
 
@@ -60,8 +60,8 @@ export const fixturesSlice = createSlice({
     }),
     builder.addCase(fecthPredictions.fulfilled, (state, action) => {
       const data: Prediction = action.payload[0];
-      console.log('result from promise: ', data);
       state.headToHead = data.h2h;
+      state.comparison = data.comparison
       state.loadingHeadToHeadData = false
     }),
     builder.addCase(fecthPredictions.rejected, (state) => {

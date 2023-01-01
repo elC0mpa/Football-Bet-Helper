@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../../hooks/store";
 import {fecthPredictions, setHeadToHeadFixture} from "../../store/fixturesSlice";
 import {Head2Head} from "../../types/Fixture";
+import Comparison from "./Comparison";
 import HeadToHeadTab from "./HeadToHead";
 
 const HeadToHeadModal = () => {
@@ -20,7 +21,8 @@ const HeadToHeadModal = () => {
       },
       {
         key: '1',
-        label: 'Predictions'
+				label: 'Comparison',
+				children: <Comparison/>
       }
     ]
 	
