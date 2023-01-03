@@ -40,7 +40,7 @@ type HomeAway = {
   away: number | null;
 }
 
-type H2HTeam = Team & {
+export type H2HTeam = Team & {
   winner: boolean | null
 }
 
