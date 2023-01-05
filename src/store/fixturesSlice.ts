@@ -2,7 +2,7 @@ import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import {fixturesService} from "../services/FixtureService";
 import {predictionsService} from "../services/PredictionsService";
 import {Head2Head} from "../types/Fixture";
-import {Comparison, Prediction} from "../types/Prediction";
+import {Comparison, Prediction, PredictionObj} from "../types/Prediction";
 
 interface FixturesState {
   fixtures: Head2Head[];
@@ -12,6 +12,7 @@ interface FixturesState {
   loadingHeadToHeadData: boolean;
   headToHead: Head2Head[];
   comparison?: Comparison;
+  predictions?: PredictionObj;
 }
 
 const initialState: FixturesState = {
@@ -62,6 +63,8 @@ export const fixturesSlice = createSlice({
       const data: Prediction = action.payload[0];
       state.headToHead = data.h2h;
       state.comparison = data.comparison
+      state.predictions = data.predictions
+      console.log('predictions', data.predictions);
       state.loadingHeadToHeadData = false
     }),
     builder.addCase(fecthPredictions.rejected, (state) => {

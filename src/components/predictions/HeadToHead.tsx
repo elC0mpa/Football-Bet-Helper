@@ -5,8 +5,6 @@ import {FixturesContainer} from "./../fixtures/styled";
 
 const HeadToHeadTab = () => {
 	const headToHeadData = useAppSelector((state) => state.fixtures.headToHead)
-	console.log(headToHeadData);
-	
 
 	return (
 		<FixturesContainer>

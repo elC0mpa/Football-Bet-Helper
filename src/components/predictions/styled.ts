@@ -12,8 +12,10 @@ export const ComparisonBarContainer = styled.div`
 	flex-direction: column;
 `
 
-export const ProgressContainers = styled.div`
+export const PercentsContainer = styled.div`
 	display: flex;
+	justify-content: space-between;
+	padding: 0 16px;
 `
 
 export const ComparisonBarTitle = styled.span`
@@ -27,6 +29,7 @@ export const TeamColorContainer = styled.div`
 `
 
 export const TeamColorsContainer = styled(TeamColorContainer)`
+	margin-bottom: 12px;
 `
 
 export const TeamColorBox = styled.div`

@@ -7,7 +7,8 @@ import TeamColor from "./TeamColor";
 const Comparison = () => {
 	const comparisonData = useAppSelector((state) => state.fixtures.comparison)
 	const fixture = useAppSelector((state) => state.fixtures.selectedFixture)
-	const {teams} = fixture!
+	if (!fixture) return null
+	const {teams} = fixture
 	const getLabelFromKey = (key: string) => {
 		return key === 'att' ? 'Attack' : key === 'def' ? 'Defense' : key === 'form' ? 'Form' : key === 'goals' ? 'Goals' : key === 'total' ? 'Total' : key === 'h2h' ?  'Head To Head' : 'Poisson Distribution'
 	}

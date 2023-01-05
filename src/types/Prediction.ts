@@ -35,7 +35,7 @@ type Teams = {
   home: Team;
 }
 
-type PredictionObj = {
+export type PredictionObj = {
   advice: string;
   goals: HomeAway;
   percent: HomeAwayDraw;
